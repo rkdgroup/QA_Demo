@@ -34,8 +34,11 @@ public class sampleJenkins {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();*/
 
-        System.setProperty("webdriver.chrome.driver",downloadFilepath+"//chromedriver.exe");
-        driver = new ChromeDriver();
+       // System.setProperty("webdriver.chrome.driver",downloadFilepath+"//chromedriver.exe");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.setBinary(downloadFilepath);
+        driver = new ChromeDriver(chromeOptions);
       //  WebDriverRunner.setWebDriver(driver);
         driver.get("https://www.google.com");
         System.out.println(driver.getTitle());
