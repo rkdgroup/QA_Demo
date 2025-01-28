@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,13 +36,32 @@ public class sampleJenkins {
         driver.manage().window().maximize();*/
 
        // System.setProperty("webdriver.chrome.driver",downloadFilepath+"//chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
+       /* ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.setBinary(downloadFilepath);
         driver = new ChromeDriver(chromeOptions);
       //  WebDriverRunner.setWebDriver(driver);
         driver.get("https://www.google.com");
-        System.out.println(driver.getTitle());
+        System.out.println(driver.getTitle());*/
+
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // Run in headless mode (optional)
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+        options.addArguments("window-size=1366,768");
+
+        // Start ChromeDriver
+        driver = new ChromeDriver(options);
+
+        // Open a website to verify if everything is working
+        driver.get("https://www.google.com");
+
+        // Print the title of the page
+        System.out.println("Title: " + driver.getTitle());
+
+        // Close the browser
+        driver.quit();
 
 
     }
