@@ -15,7 +15,7 @@ public class sampleJenkins {
     public void runtest(){
         WebDriver driver;
         String FS = File.separator;
-        String downloadFilepath = System.getProperty("user.dir") + FS + "src" + FS + "test" + FS + "resources" + FS + "Downloads";
+        String downloadFilepath = System.getProperty("user.dir") + FS + "src" + FS + "test" + FS + "resources" + FS + "downloads";
 
         System.out.println("Hello Jenkins");
         /*WebDriverManager.chromedriver().clearDriverCache().setup();
