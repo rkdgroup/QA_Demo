@@ -18,7 +18,7 @@ public class sampleJenkins {
         String downloadFilepath = System.getProperty("user.dir") + FS + "src" + FS + "test" + FS + "resources" + FS + "Downloads";
 
         System.out.println("Hello Jenkins");
-        WebDriverManager.chromedriver().clearDriverCache().setup();
+        /*WebDriverManager.chromedriver().clearDriverCache().setup();
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("profile.default_content_settings.popups", 0);
         chromePrefs.put("download.prompt_for_download", "false");
@@ -32,7 +32,9 @@ public class sampleJenkins {
         chromeOptions.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         driver = new ChromeDriver(chromeOptions);
         driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
+        driver.manage().window().maximize();*/
+        System.setProperty("webdriver.chrome.driver","D:\\IdeaProjects\\QA_Demo\\src\\test\\resources\\downloads\\chromedriver_1.exe");
+        driver = new ChromeDriver();
         driver.get("https://www.google.com");
         System.out.println(driver.getTitle());
 
