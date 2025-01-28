@@ -10,8 +10,8 @@
   <dependencies>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-chrome-driver</artifactId>
-      <version>3.141.59</version>
+      <artifactId>selenium-java</artifactId>
+      <version>4.26.0</version>
     </dependency>
 
     <dependency>
