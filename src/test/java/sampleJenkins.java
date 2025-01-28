@@ -1,18 +1,18 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.HashMap;
+
+import org.testng.annotations.Test;
 
 public class sampleJenkins {
-    public static void main(String[] args) {
+    @Test
+    public void runtest(){
         WebDriver driver;
         String FS = File.separator;
         String downloadFilepath = System.getProperty("user.dir") + FS + "src" + FS + "test" + FS + "resources" + FS + "Downloads";
