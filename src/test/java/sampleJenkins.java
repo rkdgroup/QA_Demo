@@ -33,7 +33,7 @@ public class sampleJenkins {
         driver = new ChromeDriver(chromeOptions);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();*/
-        System.setProperty("webdriver.chrome.driver","D:\\IdeaProjects\\QA_Demo\\src\\test\\resources\\downloads\\chromedriver");
+        System.setProperty("webdriver.chrome.driver",downloadFilepath);
         driver = new ChromeDriver();
         driver.get("https://www.google.com");
         System.out.println(driver.getTitle());
