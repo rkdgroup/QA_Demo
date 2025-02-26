@@ -62,7 +62,7 @@ public class sampleJenkins {
 
         // Close the browser
         driver.quit();
-        System.out.println("quit");
+        System.out.println("quit1");
 
 
     }
