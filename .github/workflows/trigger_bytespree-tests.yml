@@ -1,0 +1,21 @@
+name: Trigger Repository 1 Maven Selenium Automation
+
+on:
+  push:
+    branches:
+      - develop  # Trigger workflow when code is merged to the 'develop' branch
+
+jobs:
+  trigger_repo1_workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository 2
+        uses: actions/checkout@v3
+
+      - name: Trigger Workflow in Repository 1
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GH_PAT }}" \
+            -d '{"ref": "main"}' \
+            https://api.github.com/repos/rkdgroup/bytespree_tests/actions/workflows/maven.yml/dispatches
