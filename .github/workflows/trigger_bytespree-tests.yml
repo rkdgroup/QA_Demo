@@ -3,7 +3,7 @@ name: Trigger Repository 1 Maven Selenium Automation
 on:
   push:
     branches:
-      - develop  # Trigger workflow when code is merged to the 'develop' branch
+      - main  # Trigger workflow when code is merged to the 'develop' branch
 
 jobs:
   trigger_repo1_workflow:
@@ -17,5 +17,5 @@ jobs:
         run: |
           curl -X POST \
             -H "Authorization: token ${{ secrets.GH_PAT }}" \
-            -d '{"ref": "main"}' \
+            -d '{"ref": "master"}' \
             https://api.github.com/repos/rkdgroup/bytespree_tests/actions/workflows/maven.yml/dispatches
